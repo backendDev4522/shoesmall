@@ -5,6 +5,7 @@
 	<resultMap type="goodsVO" id="goodsResult">
 		<id property="goods_id" column="goods_id" />
 		<result property="goods_sort" column="goods_sort" />
+		<result property="goods_model" column="goods_model" />
 		<result property="goods_title" column="goods_title" />
 		<result property="goods_gender" column="goods_gender" />
 		<result property="goods_price" column="goods_price" />

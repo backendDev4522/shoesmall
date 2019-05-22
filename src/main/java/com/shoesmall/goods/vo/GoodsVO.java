@@ -10,6 +10,7 @@ public class GoodsVO {
 	private int goods_id;
 	private String goods_sort;
 	private String goods_title;
+	private String goods_model;
 	private String goods_gender;
 	private int goods_price;
 	private int goods_sales_price;

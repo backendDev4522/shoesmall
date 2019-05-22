@@ -41,6 +41,7 @@ public class GoodsControllerImpl extends BaseController implements GoodsControll
 		return mav;
 	}
 	
+	
 	@RequestMapping(value="/keywordSearch.do",method = RequestMethod.GET,produces = "application/text; charset=utf8")
 	public @ResponseBody String  keywordSearch(@RequestParam("keyword") String keyword,
 			                                  HttpServletRequest request, HttpServletResponse response) throws Exception{
@@ -75,11 +76,11 @@ public class GoodsControllerImpl extends BaseController implements GoodsControll
 	
 	private void addGoodsInQuick(String goods_id,GoodsVO goodsVO,HttpSession session){
 		boolean already_existed=false;
-		List<GoodsVO> quickGoodsList; //�ֱ� �� ��ǰ ���� ArrayList
+		List<GoodsVO> quickGoodsList; 
 		quickGoodsList=(ArrayList<GoodsVO>)session.getAttribute("quickGoodsList");
 		
 		if(quickGoodsList!=null){
-			if(quickGoodsList.size() < 4){ //�̸��� ��ǰ ����Ʈ�� ��ǰ������ ���� ������ ���
+			if(quickGoodsList.size() < 4){
 				for(int i=0; i<quickGoodsList.size();i++){
 					GoodsVO _goodsBean=(GoodsVO)quickGoodsList.get(i);
 					if(goods_id.equals(_goodsBean.getGoods_id())){

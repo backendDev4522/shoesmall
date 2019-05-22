@@ -3,8 +3,9 @@
 -- 필드 설명 : 아이디, 종류, 제목, 저자, 출판사, 가격, 판매가격, 포인트, 출판일, 
 -- 총페이지수, isbn번호, 배송비, 배송일, 판매분류, 상품소개,저자소개, 출판사평, 추천사, 목차, 입고일 
 
-   CREATE TABLE tb_goods
-   ("GOODS_ID" VARCHAR2(100) primary key,
+   CREATE TABLE goods
+   ("GOODS_ID" NUMBER(20,0) primary key,
+   "GOODS_MODEL" VARCHAR2(100) NOT NULL,
 	"GOODS_SORT" VARCHAR2(50) NOT NULL, 
 	"GOODS_TITLE" VARCHAR2(100) NOT NULL, 
     "GOODS_GENDER" VARCHAR2(10) NOT NULL,
@@ -22,7 +23,7 @@
     "GOODS_MANUFACTURER_DATE" DATE,
 	"GOODS_ENTER_DATE" DATE DEFAULT sysdate
    ) ;
-   DROP TABLE TB_GOODS;
+   DROP TABLE GOODS;
    CREATE TABLE TB_GOODS_DETALE(
    "GOODS_ID" VARCHAR2(100) NOT NULL,
    "GOODS_SIZE" NUMBER(5,0) NOT NULL,
@@ -32,7 +33,7 @@
 -- DDL for Table goods_image
 -- 변경 사항: credate - > REG_DATE
 -- 필드 설명 : 이미지아이디, 상품아이디, 파일이름, 등록자아이디, 파일종류, 등록일
- CREATE TABLE tb_goods_image (
+ CREATE TABLE goods_image (
    "IMAGE_ID" NUMBER(20,0) primary key, 
 	"GOODS_ID" NUMBER(20,0), 
 	"FILENAME" VARCHAR2(50), 
@@ -49,7 +50,7 @@
 -- 필드 설명 : 회원아이디, 회원 비밀번호, 회원 이름, 회원성별,전화번호1, 전화번호2, 전화번호3,
 -- 휴대폰1,휴대폰2,휴대폰3,sms여부,이메일1,이메일2,이메일여부,우편번호,도로명주소,지번주소,나머지주소,생년월일 년,월,일
 -- 회원가입자, 회원탈퇴여부
-    CREATE TABLE TB_member
+    CREATE TABLE member
    ("MEMBER_ID" VARCHAR2(20) primary key, 
 	"MEMBER_PW" VARCHAR2(30), 
 	"MEMBER_NAME" VARCHAR2(50), 
@@ -78,7 +79,7 @@
 -- 상품제목, 주문상품수량, 상품판매가격, 상품이미지파일, 수령자이름,수령자휴대폰1,2,3,
 -- 수령자유선번호1,2,3, 배송주소, 배송방법, 부재시 전달 메세지, 상품포장여부, 결제방법,
 -- 결제카드회사이름, 할부개월수, 결제자 휴대폰번호, 상품배송상태, 결제시간, 휴대폰결제번호
-   CREATE TABLE TB_orders
+   CREATE TABLE orders
    (
     "ORDER_SEQ_NUM" NUMBER(20,0) primary key, 
 	"ORDER_ID" NUMBER(20,0), 
@@ -113,7 +114,7 @@
 -- 필드 설명 : 장바구니번호, 상품번호, 회원아이디, 장바구니삭제여부,
 -- 장바구니 등록일, 장바구니 상품개수,
     
-    CREATE TABLE TB_CART
+    CREATE TABLE CART
    (	
     "CART_ID" NUMBER(10,0) primary key, 
 	"GOODS_ID" NUMBER(20,0), 
@@ -123,5 +124,9 @@
 	"CART_GOODS_QTY" NUMBER(4,0) DEFAULT 1
    ) ;
    
+   
+   
+   Insert into T_GOODS_DETAIL_IMAGE (IMAGE_ID,GOODS_ID,FILENAME,REG_ID,FILETYPE) values (346,394,'무작정 따라가기 홍콩 마카오.jpg','admin','main_image');
+   Insert into T_GOODS_DETAIL_IMAGE (IMAGE_ID,GOODS_ID,FILENAME,REG_ID,FILETYPE values (347,394,'무작정 따라가기 홍콩 마카오_상세.jpg','admin','detail_image1',to_date('18/10/16','RR/MM/DD'));
 
    

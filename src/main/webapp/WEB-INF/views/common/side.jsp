@@ -45,7 +45,7 @@
 	<li>
 		<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;신발</h3>
 		<ul>
-			<li><a href="${contextPath}/goods/goodsList.do">라이프스타일</a></li>
+			<li><a href="${contextPath}/goods/goodsList.do?goods_sort='라이프스타일'">라이프스타일</a></li>
 			<li><a href="#">러닝</a></li>
 			<li><a href="#">트레이닝&짐</a></li>
 			<li><a href="#">농구</a></li>
