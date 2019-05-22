@@ -10,9 +10,6 @@ public class MemberVO {
 	private String member_pw;
 	private String member_name;
 	private String member_gender;
-	private String tel1;
-	private String tel2;
-	private String tel3;
 	private String hp1;
 	private String hp2;
 	private String hp3;
@@ -60,30 +57,6 @@ public class MemberVO {
 
 	public void setMember_gender(String member_gender) {
 		this.member_gender = member_gender;
-	}
-
-	public String getTel1() {
-		return tel1;
-	}
-
-	public void setTel1(String tel1) {
-		this.tel1 = tel1;
-	}
-
-	public String getTel2() {
-		return tel2;
-	}
-
-	public void setTel2(String tel2) {
-		this.tel2 = tel2;
-	}
-
-	public String getTel3() {
-		return tel3;
-	}
-
-	public void setTel3(String tel3) {
-		this.tel3 = tel3;
 	}
 
 	public String getHp1() {

@@ -8,9 +8,6 @@
 		<result property="member_pw" column="member_pw" />
 		<result property="member_name" column="member_name" />
 		<result property="member_gender" column="member_gender" />
-		<result property="tel1" column="tel1" />
-		<result property="tel2" column="tel2" />
-		<result property="tel3" column="tel3" />
 		<result property="hp1" column="hp1" />
 		<result property="hp2" column="hp2" />
 		<result property="hp3" column="hp3" />
@@ -47,9 +44,9 @@
 	<!-- 회원 등록 -->
   	<insert id="insertMember" parameterType="memberVO">
   		<![CDATA[
-    	insert into member(member_id, member_pw, member_name, member_gender, tel1, tel2, tel3, hp1, hp2, hp3, sms_yn,
+    	insert into member(member_id, member_pw, member_name, member_gender, hp1, hp2, hp3, sms_yn,
         email1, email2, email_yn, zipcode, road_address, jibun_address, detail_address, birth_year, birth_month, birth_day)
-		values(#{member_id}, #{member_pw}, #{member_name}, #{member_gender}, #{tel1}, #{tel2}, #{tel3}, #{hp1}, #{hp2}, #{hp3}, #{sms_yn},
+		values(#{member_id}, #{member_pw}, #{member_name}, #{member_gender}, #{hp1}, #{hp2}, #{hp3}, #{sms_yn},
         #{email1}, #{email2}, #{email_yn}, #{zipcode}, #{road_address}, #{jibun_address}, #{detail_address}, #{birth_year}, #{birth_month}, #{birth_day})
    		]]>      
   </insert>

@@ -11,7 +11,7 @@
 
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="${contextPath}/resources/css/main.css" rel="stylesheet" type="text/css" media="screen">
 <link href="${contextPath}/resources/css/basic-jquery-slider.css" rel="stylesheet" type="text/css" media="screen">
 <link href="${contextPath}/resources/css/mobile.css" rel="stylesheet" type="text/css">
@@ -21,6 +21,8 @@
 <script src="${contextPath}/resources/jquery/basic-jquery-slider.js" type="text/javascript"></script>
 <script src="${contextPath}/resources/jquery/tabs.js" type="text/javascript"></script>
 <script src="${contextPath}/resources/jquery/carousel.js" type="text/javascript"></script>
+
+
 <script>
 	// 슬라이드 
 	$(document).ready(function() {
@@ -63,6 +65,8 @@
 		</div>
 		 <tiles:insertAttribute name="quickMenu" />
     </div>        	
+
+    <script src="js/bootstrap.min.js"></script>
 </body>      
         
         
