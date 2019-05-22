@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<!-- Mybatis 환경 설정 파일 -->
+<configuration>
+	<!-- Alias 설정 -->
+	<typeAliases>
+		<typeAlias alias="goodsVO" type="com.shosemall.goods.vo.GoodsVO"/>
+		<typeAlias alias="imageFileVO" type="com.shosemall.goods.vo.ImageFileVO"/>
+		<typeAlias alias="memberVO" type="com.shosemall.member.vo.MemberVO"/>
+		<typeAlias alias="cartVO" type="com.shosemall.cart.vo.CartVO"/>
+<!-- 		<typeAlias alias="orderVO" type="com.shosemall.order.vo.OrderVO"/>
+		<typeAlias alias="mypageVO" type="com.shosemall.mypage.vo.MyPageVO"/> -->
+	</typeAliases>
+</configuration>
