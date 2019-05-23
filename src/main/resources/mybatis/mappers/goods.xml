@@ -47,6 +47,18 @@
 		]]>
 	</select>
 	
+	<select id="selectGoodsListBySort" resultMap="goodsResult">
+		<![CDATA[
+			select t.*from (
+			select g.*, i.filename
+			from goods g, goods_image i
+			where g.goods_id = i.goods_id
+			and i.filetype = 'main_image'
+			and g.goods_sort = #{goods_sort}
+			order by g.goods_enter_date desc) t
+			where rowNum < 16
+		]]>
+	</select>
 	<!-- 상품 상세 보기 (1건) - 조인(goods, goods_image) -->
 	<select id="selectGoodsDetail" parameterType="String" resultMap="goodsResult">
 		<![CDATA[

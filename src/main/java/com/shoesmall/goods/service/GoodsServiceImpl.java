@@ -30,7 +30,11 @@ public class GoodsServiceImpl implements GoodsService{
 		goodsMap.put("on sale",goodsList);
 		return goodsMap;
 	}
-	
+	public Map<String, List<GoodsVO>> listGoodsBySort(String goods_sort) throws Exception {
+		Map<String, List<GoodsVO>> goodsMap = new HashMap<String, List<GoodsVO>>();
+		List<GoodsVO> goodsList = goodsDAO.selectGoodsListBySort(goods_sort);
+		goodsMap.put(goods_sort, goodsList);
+	}
 	public Map goodsDetail(String _goods_id) throws Exception {
 		Map goodsMap=new HashMap();
 		GoodsVO goodsVO = goodsDAO.selectGoodsDetail(_goods_id);

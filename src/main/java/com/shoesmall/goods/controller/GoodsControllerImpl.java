@@ -32,6 +32,7 @@ public class GoodsControllerImpl extends BaseController implements GoodsControll
 	public ModelAndView goodsDetail(@RequestParam("goods_id") String goods_id,
 			                       HttpServletRequest request, HttpServletResponse response) throws Exception {
 		String viewName=(String)request.getAttribute("viewName");
+		System.out.println("viewname : " + viewName);
 		HttpSession session=request.getSession();
 		Map goodsMap=goodsService.goodsDetail(goods_id);
 		ModelAndView mav = new ModelAndView(viewName);
@@ -41,6 +42,15 @@ public class GoodsControllerImpl extends BaseController implements GoodsControll
 		return mav;
 	}
 	
+	@RequestMapping(value="/goodsList" ,method = RequestMethod.GET)
+	public ModelAndView goodsListBySort(@RequestParam("goods_sort") String goods_sort,
+			                       HttpServletRequest request, HttpServletResponse response) throws Exception {
+		String viewName=(String)request.getAttribute("viewName");
+		Map<String, List<GoodsVO>> goodsMap=goodsService.listGoodsBySort(goods_sort);
+		ModelAndView mav = new ModelAndView(viewName);
+		mav.addObject("goodsMap", goodsMap);
+		return mav;
+	}
 	
 	@RequestMapping(value="/keywordSearch.do",method = RequestMethod.GET,produces = "application/text; charset=utf8")
 	public @ResponseBody String  keywordSearch(@RequestParam("keyword") String keyword,

@@ -28,6 +28,10 @@ public class GoodsDAOImpl  implements GoodsDAO{
 	   return list;
 	}
 	
+	public List<GoodsVO> selectGoodsListBySort(String goods_sort) throws DataAccessException {
+		List<GoodsVO> goodsList = (ArrayList)sqlSession.selectList("mapper.goods.selectGoodsListBySort",goods_sort);
+		return goodsList;
+	}
 	@Override
 	public ArrayList selectGoodsBySearchWord(String searchWord) throws DataAccessException{
 		ArrayList list=(ArrayList)sqlSession.selectList("mapper.goods.selectGoodsBySearchWord",searchWord);
